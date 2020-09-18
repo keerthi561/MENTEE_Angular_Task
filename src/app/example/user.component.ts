@@ -14,9 +14,7 @@ export class UserComponent {
   url = 'https://api.github.com/users';
   records:any; 
 
-  constructor(private http : HttpClient, private router: Router, private appService: AppService){ 
-    this.appService = this.appService.getUrl();
-  }
+  constructor(private http : HttpClient, private router: Router, private appService: AppService){ }
   ngOnInit(): void {
     this.http.get(this.url) 
     .subscribe(Response => { 
@@ -25,12 +23,13 @@ export class UserComponent {
     }); 
   }
   
-  fun() {  }
   onSubmit(f: NgForm) {
     console.log(f.value);  // { first: '', last: '' }
     console.log(f.valid);  // false
 
     // this.router.navigate(['print'], { state: { example: this.url }});
+    this.appService.run();
+    this.appService.setUrl(this.url);
     this.router.navigate(['/print']);
   }
 

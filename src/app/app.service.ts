@@ -8,8 +8,10 @@ export class AppService {
   }
   setUrl(url:any) {
     this.url = url;
+    console.log('set rl')
   }
   getUrl() {
     return this.url;
+    console.log('get rl')
   }
 }

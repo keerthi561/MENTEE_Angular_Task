@@ -11,6 +11,11 @@ import { PrintComponent } from './print/print.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AppService } from './app.service';
 
+
+const appRoot: Routes = [
+  {path: 'user', component: UserComponent},
+{path: 'print', component: PrintComponent},]
+
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule, 
   RouterModule.forRoot(
