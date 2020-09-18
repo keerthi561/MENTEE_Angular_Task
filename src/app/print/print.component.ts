@@ -15,7 +15,6 @@ export class PrintComponent {
   constructor(private http : HttpClient, private router: Router, private appService: AppService) { 
   }
   ngOnInit(): void {
-    this.appService.run();
     this.url = this.appService.getUrl();
     this.http.get(this.url) .subscribe(Response => { 
       console.log(Response) 

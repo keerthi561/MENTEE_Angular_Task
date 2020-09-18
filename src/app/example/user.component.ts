@@ -18,9 +18,8 @@ export class UserComponent {
   ngOnInit() { }
   
   onSubmit(f: NgForm) {
-    
-    // this.url = 'https://api.github.com/users';
     this.url = f.value.url;
+    console.log(this.url)
     this.appService.setUrl(this.url);
     this.router.navigate(['/print']);
 

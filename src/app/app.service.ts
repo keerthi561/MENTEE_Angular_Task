@@ -12,7 +12,7 @@ export class AppService {
   }
   getUrl() {
     console.log('get rl')
-    return 'https://api.github.com/users?since=17&page=100&per_page=10';
+    return this.url;
     
   }
 }
