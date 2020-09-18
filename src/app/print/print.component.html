@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>LOGIN </th>
+      <th>ID</th>
+      <th>TYPE </th>
+      <th>AVATAR_URL </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of records;let i = index;">
+      <td> <span>{{record.login}}</span> </td>
+      <td> <span>{{record.id}}</span> </td>
+      <td> <span>{{record.type}}</span> </td>
+      <td> <span>{{record.avatar_url}}</span> </td>
+    </tr>
+  </tbody>
+</table>

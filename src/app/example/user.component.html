@@ -1,18 +1,21 @@
-<table class="minimalistBlack" *ngIf="records.length > 0">
-  <thead>
-    <tr>
-      <th>LOGIN </th>
-      <th>ID</th>
-      <th>TYPE </th>
-      <th>AVATAR_URL </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let record of records;let i = index;">
-      <td> <span>{{record.login}}</span> </td>
-      <td> <span>{{record.id}}</span> </td>
-      <td> <span>{{record.type}}</span> </td>
-      <td> <span>{{record.avatar_url}}</span> </td>
-    </tr>
-  </tbody>
-</table>
+<!-- <form #ctrl='ngForm' (submit)='fun()'>
+        <input ngModel name='inputName' required>
+        <input type='submit'   >
+  </form>
+    <p> value: {{ ctrl.value.inputName }} </p> -->
+
+<!-- <input type="text" name="xx">
+<input type="submit">
+</form> -->
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+      <input name="since" ngModel required #first="ngModel">
+      <input name="page" ngModel required>
+      <input name="per_page" ngModel required>
+      <button>Submit</button>
+</form>
+    <!-- <p>First name value: {{ first.value }}</p>
+    <p>First name valid: {{ first.valid }}</p>
+    <p>Form value: {{ f.value | json }}</p>
+    <p>Form valid: {{ f.valid }}</p>
+ -->
