@@ -1,21 +1,5 @@
-<!-- <form #ctrl='ngForm' (submit)='fun()'>
-        <input ngModel name='inputName' required>
-        <input type='submit'   >
-  </form>
-    <p> value: {{ ctrl.value.inputName }} </p> -->
 
-<!-- <input type="text" name="xx">
-<input type="submit">
-</form> -->
-
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" >
-      <input name="since" ngModel required #first="ngModel">
-      <input name="page" ngModel required>
-      <input name="per_page" ngModel required>
+<form #p="ngForm" (ngSubmit)="onSubmit(p)" novalidate>
+      <input type="url" name="url" ngModel required #param="ngModel">
       <button>Submit</button>
 </form>
-    <!-- <p>First name value: {{ first.value }}</p>
-    <p>First name valid: {{ first.valid }}</p>
-    <p>Form value: {{ f.value | json }}</p>
-    <p>Form valid: {{ f.valid }}</p>
- -->

@@ -10,20 +10,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { PrintComponent } from './print/print.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AppService } from './app.service';
-
+import { AppRoutingModule } from './app-routing.module';
 
 const appRoot: Routes = [
+  {path: '', component: UserComponent},
   {path: 'user', component: UserComponent},
 {path: 'print', component: PrintComponent},]
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule, 
-  RouterModule.forRoot(
-      [
-        { path: "user", component: UserComponent },
-        { path: "print", component: PrintComponent }
-      ]
-    )],
+  RouterModule.forRoot(appRoot),
+    ],
   declarations: [ AppComponent, HelloComponent , UserComponent, PrintComponent],
   bootstrap:    [ AppComponent ],
   providers:    [ AppService ]

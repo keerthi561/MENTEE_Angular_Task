@@ -9,18 +9,15 @@ import { AppService } from '../app.service';
 
 
 export class PrintComponent { 
-  url = '';
+  url:string;
   records:any; 
 
-  constructor(private http : HttpClient, private router: Router, private appService: AppService){ 
-    this.appService.run();
-    // this.url = this.router.getCurrentNavigation().extras.state.example;
-    this.appService = this.appService.getUrl();
-    // this.url = 'https://api.github.com/users?since=17&page=100&per_page=10'
+  constructor(private http : HttpClient, private router: Router, private appService: AppService) { 
   }
   ngOnInit(): void {
-    this.http.get(this.url) 
-    .subscribe(Response => { 
+    this.appService.run();
+    this.url = this.appService.getUrl();
+    this.http.get(this.url) .subscribe(Response => { 
       console.log(Response) 
       this.records=Response;
     }); 

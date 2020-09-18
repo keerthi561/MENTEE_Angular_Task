@@ -11,26 +11,19 @@ import { AppService } from '../app.service';
 
 
 export class UserComponent { 
-  url = 'https://api.github.com/users';
+  url:string;
   records:any; 
 
   constructor(private http : HttpClient, private router: Router, private appService: AppService){ }
-  ngOnInit(): void {
-    this.http.get(this.url) 
-    .subscribe(Response => { 
-      console.log(Response) 
-      this.records=Response;
-    }); 
-  }
+  ngOnInit() { }
   
   onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
-
-    // this.router.navigate(['print'], { state: { example: this.url }});
-    this.appService.run();
+    
+    // this.url = 'https://api.github.com/users';
+    this.url = f.value.url;
     this.appService.setUrl(this.url);
     this.router.navigate(['/print']);
+
   }
 
 } // Export the class to use it outside of this file
